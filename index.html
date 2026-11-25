@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09070d">
+  <meta name="description" content="Règlement officiel de CREW GTA 6 — communauté française inspirée de Vice City et Leonida.">
+  <title>CREW GTA 6 — Règlement officiel</title>
+  <style>
+    :root {
+      --pink: #ff42c8;
+      --pink-soft: #ff8bdd;
+      --cyan: #62eaff;
+      --gold: #ffc66d;
+      --ink: #09070d;
+      --panel: rgba(19, 13, 25, .88);
+      --muted: #c6b8cc;
+      --line: rgba(255, 91, 213, .24);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: #fff; background: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      line-height: 1.65; overflow-x: hidden;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -2;
+      background:
+        radial-gradient(ellipse at 50% 8%, rgba(255,55,190,.20), transparent 38%),
+        radial-gradient(ellipse at 90% 45%, rgba(99,30,156,.16), transparent 35%),
+        linear-gradient(180deg, #100916 0%, #09070d 52%, #060509 100%);
+    }
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      opacity: .16;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, calc(100% - 36px)); margin: auto; }
+    header {
+      position: relative; padding: 24px 0 0;
+    }
+    nav {
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding: 13px 18px; border:1px solid var(--line); border-radius:18px;
+      background:rgba(12,8,17,.72); backdrop-filter: blur(14px);
+      box-shadow: 0 0 28px rgba(255,48,193,.08);
+    }
+    .brand { display:flex; align-items:center; gap:11px; font-weight:900; letter-spacing:.08em; }
+    .brand-mark {
+      width:39px; height:39px; display:grid; place-items:center; border-radius:13px;
+      color:#160b19; font-size:23px; font-weight:1000;
+      background:linear-gradient(135deg,#fff 0%,#ff8be1 36%,#ff32bd 75%,#8c48ff 100%);
+      box-shadow:0 0 20px rgba(255,55,195,.4);
+    }
+    .brand small { display:block; color:var(--pink-soft); font-size:9px; letter-spacing:.28em; }
+    .nav-tag { color:var(--muted); font-size:12px; letter-spacing:.16em; text-transform:uppercase; }
+    .hero {
+      min-height: 535px; display:grid; place-items:center; text-align:center;
+      position:relative; overflow:hidden; margin:22px 0 28px; padding:28px 22px 42px;
+      border:1px solid rgba(255,91,213,.25); border-radius:26px;
+      background:
+        radial-gradient(ellipse at 50% 43%, rgba(255,55,195,.20), transparent 42%),
+        radial-gradient(ellipse at 50% 100%, rgba(108,35,130,.18), transparent 55%),
+        linear-gradient(145deg,#100914 0%,#1b0d22 48%,#09070d 100%);
+      box-shadow:0 20px 80px rgba(0,0,0,.35), 0 0 55px rgba(255,54,193,.12);
+    }
+    .hero:before {
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, transparent 45%, rgba(7,5,10,.88) 100%),
+        repeating-linear-gradient(90deg, transparent 0 7%, rgba(255,255,255,.035) 7.1% 7.25%, transparent 7.35% 14%);
+      opacity:.65;
+    }
+    .sun {
+      position:absolute; width:210px; height:210px; border-radius:50%; top:48px;
+      background:linear-gradient(180deg,#fff1bd 0%,#ffad88 38%,#ff4cbf 100%);
+      box-shadow:0 0 70px rgba(255,111,197,.65);
+      opacity:.12;
+    }
+    .sun:after {
+      content:""; position:absolute; inset:48% 0 0;
+      background:repeating-linear-gradient(to bottom, transparent 0 8px, rgba(30,8,35,.42) 9px 13px);
+    }
+    .palms { position:absolute; bottom:35px; width:100%; height:180px; opacity:.20; }
+    .palm { position:absolute; bottom:0; width:150px; height:180px; }
+    .palm.left { left:4%; transform:rotate(-7deg); }
+    .palm.right { right:4%; transform:scaleX(-1) rotate(-7deg); }
+    .trunk { position:absolute; bottom:0; left:72px; width:8px; height:150px; background:#130c1b; transform:rotate(8deg); border-radius:8px; }
+    .leaf { position:absolute; left:70px; top:10px; width:92px; height:24px; transform-origin:left center; border-top:8px solid #130c1b; border-radius:100% 0 0; }
+    .leaf:nth-child(2){transform:rotate(-35deg)} .leaf:nth-child(3){transform:rotate(-65deg)}
+    .leaf:nth-child(4){transform:rotate(-95deg)} .leaf:nth-child(5){transform:rotate(25deg)}
+    .leaf:nth-child(6){transform:rotate(55deg)} .leaf:nth-child(7){transform:rotate(85deg)}
+    .hero-logo {
+      position:absolute; z-index:2; top:8px; left:50%; transform:translateX(-50%);
+      width:min(270px, 58vw); height:auto; object-fit:contain;
+      filter:drop-shadow(0 12px 25px rgba(0,0,0,.55)) drop-shadow(0 0 24px rgba(255,55,195,.18));
+    }
+    .hero-content { position:relative; z-index:3; max-width:720px; margin-top:245px; }
+    .eyebrow { color:#ffd2f3; text-transform:uppercase; letter-spacing:.34em; font-size:11px; font-weight:800; }
+    h1 { margin:9px 0 4px; font-size:clamp(42px,8vw,78px); line-height:.98; letter-spacing:-.055em; font-weight:1000; text-shadow:0 4px 0 #74205e,0 0 28px rgba(255,66,200,.7); }
+    h1 span { color:#ff8cde; }
+    .hero p { margin:18px auto 0; max-width:570px; color:#f5eaf5; font-size:15px; }
+    .hero-pill {
+      display:inline-flex; align-items:center; gap:8px; margin-top:22px; padding:9px 15px;
+      border:1px solid rgba(255,174,234,.55); border-radius:999px; background:rgba(10,6,15,.52);
+      color:#ffe5f8; font-size:11px; letter-spacing:.13em; text-transform:uppercase;
+    }
+    .intro { display:flex; align-items:end; justify-content:space-between; gap:20px; margin:40px 0 18px; }
+    .intro h2 { margin:0; font-size:26px; letter-spacing:-.03em; }
+    .intro p { margin:5px 0 0; color:var(--muted); font-size:13px; }
+    .status { color:var(--pink-soft); font-size:11px; letter-spacing:.15em; text-transform:uppercase; white-space:nowrap; }
+    .rules { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
+    .rule {
+      display:flex; gap:15px; padding:21px; border-radius:18px;
+      border:1px solid rgba(255,255,255,.09); background:linear-gradient(145deg,rgba(30,19,37,.94),rgba(13,10,18,.96));
+      box-shadow:inset 0 1px rgba(255,255,255,.035); transition:.2s ease;
+    }
+    .rule:hover { transform:translateY(-3px); border-color:rgba(255,75,205,.48); box-shadow:0 10px 35px rgba(255,45,190,.09); }
+    .num {
+      flex:0 0 42px; height:42px; display:grid; place-items:center; border-radius:13px;
+      color:#ff8bdd; font-weight:900; font-size:13px; background:rgba(255,65,199,.12);
+      border:1px solid rgba(255,65,199,.25);
+    }
+    .rule h3 { margin:0 0 5px; font-size:15px; }
+    .rule p { margin:0; color:var(--muted); font-size:13px; }
+    .note {
+      margin:22px 0; padding:20px 22px; border-radius:18px;
+      border:1px solid rgba(98,234,255,.24); background:rgba(19,35,44,.42);
+      color:#d9f9ff; font-size:13px;
+    }
+    .note strong { color:var(--cyan); }
+    .bottom {
+      margin:32px 0 22px; padding:28px; text-align:center; border-radius:22px;
+      border:1px solid var(--line); background:linear-gradient(135deg,rgba(42,17,43,.85),rgba(13,9,18,.95));
+    }
+    .bottom .flamingo { font-size:28px; }
+    .bottom h2 { margin:5px 0; color:#ff8bdd; font-size:23px; }
+    .bottom p { color:var(--muted); margin:0 auto 17px; font-size:13px; }
+    .btn {
+      display:inline-flex; justify-content:center; align-items:center; gap:9px; padding:12px 19px;
+      border-radius:12px; color:#160b19; font-weight:900; font-size:13px;
+      background:linear-gradient(100deg,#ff9ae5,#ff43c5 60%,#d65dff);
+      box-shadow:0 0 24px rgba(255,65,197,.25);
+    }
+    footer { padding:18px 0 30px; text-align:center; color:#766b7d; font-size:11px; }
+    footer b { color:#d69bc9; }
+    @media(max-width:700px) {
+      .rules { grid-template-columns:1fr; }
+      .hero { min-height:490px; }
+      .hero-logo { top:12px; width:min(235px, 62vw); }
+      .hero-content { margin-top:225px; }
+      .intro { align-items:start; flex-direction:column; }
+      .nav-tag { display:none; }
+      .rule { padding:18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a class="brand" href="#">
+        <span class="brand-mark">C</span>
+        <span>CREW GTA 6<small>VICE CITY COMMUNITY</small></span>
+      </a>
+      <span class="nav-tag">🦩 Leonida • Vice City • Community</span>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="sun"></div>
+      <img class="hero-logo" src="logo-crew-gta6.png" alt="Emblème C chromé de CREW GTA 6">
+      <div class="palms">
+        <div class="palm left"><i class="trunk"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i></div>
+        <div class="palm right"><i class="trunk"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i></div>
+      </div>
+      <div class="hero-content">
+        <div class="eyebrow">🦩 Bienvenue dans le crew 🦩</div>
+        <h1>CREW <span>GTA 6</span></h1>
+        <p>Une communauté de passionnés réunis autour de GTA VI, de Vice City et de l'univers de Leonida. Avant de profiter du serveur, prends connaissance de ces quelques règles.</p>
+        <div class="hero-pill">🌴 Respect • Passion • Communauté</div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div>
+        <h2>📜 Le règlement du serveur</h2>
+        <p>Quelques règles simples pour garder une communauté agréable pour tout le monde.</p>
+      </div>
+      <div class="status">✦ À lire avant de participer</div>
+    </section>
+
+    <section class="rules">
+      <article class="rule"><div class="num">01</div><div><h3>🤝 Respect entre membres</h3><p>Respecte chaque membre. Les insultes ciblées, le harcèlement, les menaces et les propos discriminatoires n'ont pas leur place ici.</p></div></article>
+      <article class="rule"><div class="num">02</div><div><h3>💬 Bonne conduite</h3><p>Garde des échanges corrects et une bonne ambiance. Les provocations répétées et les conflits personnels doivent rester en dehors du serveur.</p></div></article>
+      <article class="rule"><div class="num">03</div><div><h3>📢 Pas de spam ni publicité sauvage</h3><p>Évite le flood, les mentions abusives et les messages répétitifs. Toute publicité ou promotion doit être autorisée par l'équipe.</p></div></article>
+      <article class="rule"><div class="num">04</div><div><h3>🗂️ Respect des salons</h3><p>Publie tes messages dans les salons adaptés et respecte leur thème. Utilise les salons prévus pour les suggestions, questions et signalements.</p></div></article>
+      <article class="rule"><div class="num">05</div><div><h3>🛡️ Équipe & modération</h3><p>Respecte les consignes de l'équipe. Si tu n'es pas d'accord avec une décision, contacte calmement un membre du staff plutôt que de lancer un débat public.</p></div></article>
+      <article class="rule"><div class="num">06</div><div><h3>🔒 Sécurité & vie privée</h3><p>Ne partage pas tes mots de passe, coordonnées bancaires ou informations personnelles. Ne publie pas les informations privées d'un autre membre sans son accord.</p></div></article>
+      <article class="rule"><div class="num">07</div><div><h3>🚫 Contenus inappropriés</h3><p>Les contenus choquants, explicites, illégaux ou destinés à mettre les membres mal à l'aise sont interdits. Respecte également les règles de Discord.</p></div></article>
+      <article class="rule"><div class="num">08</div><div><h3>🎮 Esprit communautaire</h3><p>Les débats autour de GTA VI, des plateformes et des jeux sont les bienvenus. Reste fair-play : chacun peut avoir ses préférences.</p></div></article>
+    </section>
+
+    <div class="note"><strong>⚠️ À savoir :</strong> l'équipe peut intervenir en cas de non-respect du règlement. Selon la situation, cela peut aller d'un rappel à l'ordre à une exclusion du serveur. Les règles peuvent être mises à jour si nécessaire.</div>
+
+    <section class="bottom">
+      <div class="flamingo">🦩 🌴 🦩</div>
+      <h2>ENJOY VICE CITY</h2>
+      <p>Merci de faire partie de CREW GTA 6. Profite de la communauté, partage ta passion et respecte les autres membres.</p>
+      <a class="btn" href="https://discord.gg/YN3apXP8rT" target="_blank" rel="noopener noreferrer" aria-label="Rejoindre le Discord CREW GTA 6">REJOINDRE LE CREW ↗</a>
+    </section>
+  </main>
+
+  <footer class="wrap">© <b>CREW GTA 6</b> • Communauté non officielle de fans • Grand Theft Auto et GTA VI sont des marques de leurs propriétaires respectifs.</footer>
+</body>
+</html>
